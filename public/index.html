@@ -18,16 +18,16 @@
   <input value="67" id="user_value">
   <button onclick="checkScore()">클릭</button>
   <br>
-  값1: <input type="number" id="user1">
-  <select name="" id="oper">
+  값1: <input type="number" id="user1" value="0"><br>
+  <select onchange="calculate()" name="" id="oper">
     <option value="+">+</option>
     <option value="-">-</option>
     <option value="*">*</option>
     <option value="/">/</option>
-  </select>
-    값2: <input type="number" id="user2">
-    <span>=></span>
-    결과: <input type="number" id="result">
+  </select><br>
+  값2: <input type="number" id="user2" value="0">
+  <span>=></span><br>
+  결과: <input type="number" id="result" value="0">
   <script src="js/index.js"></script>
   <script src="js/condition.js"></script>
 </body>

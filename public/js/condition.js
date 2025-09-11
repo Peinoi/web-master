@@ -1,3 +1,4 @@
+//조건문
 function checkScore() {
   const score = parseInt(document.querySelector("#user_value").value)
   if (score >= 90) {
@@ -16,3 +17,29 @@ function checkScore() {
 
   }
 }
+//계산
+function calculate(){
+  let first =parseInt(document.querySelector('#user1').value);
+  let last = parseInt(document.querySelector('#user2').value);
+  
+  let par = document.querySelector("#oper").value;
+  let result;
+  switch(par){
+    case '+' :
+      result = first + last;
+      break;
+    case '-' :
+      result = first - last;
+      break;
+    case '*' :
+      result = first * last;
+      break;
+    case '/' :
+      result = first / last;
+     
+
+  }
+  document.querySelector('#result').value=result;
+  console.log(first+" "+last+" "+par);  
+
+}//end of calculate().
