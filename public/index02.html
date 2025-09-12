@@ -5,31 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document2일차</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  </script>
 
   <style>
-    *{
+    * {
       text-align: center;
     }
-    #container{
+
+    #container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
- 
+    header{
+      width: 100%;
+    }
+    section{
+      padding: 20px;
+    }
+    li{
+      list-style: none;
+      margin: 5px 0 5px 0;
+    }
+    input{
+      width: 200px;
+    }
+    select{
+      float: right;
+      width: 200px;
+    }
+    button{
+      float: right;
+      width: 200px;
+      margin: 5px 0 5px 0;
+    }
+    textarea{
+      float: right;
+      width: 200px;
+      height: 30px;
+    }
   </style>
 </head>
 
 <body>
   <div id="container">
-    <h3>오늘은 반복문, 함수, 이벤트</h3>
+    <header>
 
+      <h3>오늘은 반복문, 함수, 이벤트</h3>
+    </header>
 
+    <section>
+      <ul>
+        <li>
+          <label for="num1">입력값1</label>
+          <input type="number" id="num1" name="num1">
+        </li>
+        <li>
+          <label for="num2">입력값2</label>
+          <input type="number" id="num2" name="num2">
+        </li>
+        <li>
+          <select name="" id="oper">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+        </li>
+        <li>
+          <button onclick="col(num1.value,num2.value,oper.value)">결과</button>
+        </li>
+        <li>
+          <textarea readonly ></textarea>
+        </li>
+      </ul>
+    </section>
 
 
   </div>
-  <script src="./js/2nd/function.js"></script>
+  <script src="./js/2nd/todo.js"></script>
 
 </body>
 
