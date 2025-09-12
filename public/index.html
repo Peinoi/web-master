@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    #aa {
+      width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
     h3#world {
       color: red;
     }
@@ -13,23 +19,27 @@
 </head>
 
 <body>
-  <h3 id="world">Hellow, World</h3>
-  <h3 id="friend">Hellow, Friend</h3>
-  <input value="67" id="user_value">
-  <button onclick="checkScore()">클릭</button>
-  <br>
-  값1: <input type="number" id="user1" value="0"><br>
-  <select onchange="calculate()" name="" id="oper">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-  </select><br>
-  값2: <input type="number" id="user2" value="0">
-  <span>=></span><br>
-  결과: <input type="number" id="result" value="0">
-  <script src="js/index.js"></script>
-  <script src="js/condition.js"></script>
+  <div id="aa">
+    <h3 id="world">사칙 연산 계산기</h3>
+    <h3 id="friend">Hellow, Friend</h3>
+    <input value="67" id="user_value">
+    <button onclick="checkScore()">클릭</button>
+    <br>
+    값1: <input type="number" id="user1" value="0"><br>
+    <select onchange="calculateif()" name="" id="oper">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select><br>
+    값2: <input type="number" id="user2" value="0">
+   <br>
+    결과: <input type="number" id="result" value="0">
+
+  </div>
+  <script src="js/1st/index.js"></script>
+  <script src="js/1st/condition.js"></script>
+
 </body>
 
 </html>
