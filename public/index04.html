@@ -12,32 +12,40 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
   </script>
   <style>
-    * {
-      box-sizing: border-box;
-      text-align: center;
-      list-style: none;
-    }
-    h3{
-      margin-top: 50px;
-    }
-    button {
-      border: none;
-      width: 100px;
-      border-radius: 5px;
-    }
-    button:hover{
-      opacity: 50%;
-    }
-    #addBtn {
+   
+
+    .saturday {
       background-color: blue;
       color: white;
     }
 
-    .addBtn {
-      background-color: gray;
+    .sunday {
+      background-color: red;
       color: white;
     }
 
+    .outer {
+      width: 800px;
+      height: 300px;
+      background-color: yellow;
+    }
+
+    .outer>.inner {
+      display: inline-block;
+      width: 90px;
+      height: 30px;
+      background-color: aqua;
+      color: red;
+      margin: 2px;
+      text-align: center;
+      line-height: 40px;
+    }
+    label{
+      background-color: red;
+      color: white;
+      text-align: center;
+      width: 40px;
+    }
   </style>
 </head>
 
@@ -56,11 +64,15 @@
       </tr>
     </thead>
     <tbody>
-      
+
     </tbody>
   </table>
+  <input type="text" id="user_value"/>
+  <button id="search_Word">찾기</button>
+  <label>Time</label>
+  <div class="outer"></div>
   <!-- <script src="./js/4rd/data.js"></script> -->
-  <script src="./js/4rd/calendar.js"></script>
+  <script src="./js/4rd/setInteval.js"></script>
 
 </body>
 

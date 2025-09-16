@@ -42,6 +42,9 @@ createCalendar(2025, 11);
 function createCalendar(yy, mm) {
   let tr = document.createElement('tr');
 
+  //홀리데이
+  let hollyday = [3, 15, 24, 9, 14];
+
   let today = new Date();
   today.setFullYear(yy);
   today.setMonth(mm);
@@ -49,10 +52,10 @@ function createCalendar(yy, mm) {
   today.setDate(1);
   let lastday = new Date(today.getTime() - (1000 * 60 * 60 * 24));
   today.setMonth(mm - 1);
-  
+
   //캡션
   let cap = document.createElement('caption');
-  cap.innerHTML = today.getFullYear() + "년 " + (today.getMonth()+1) + "월";
+  cap.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
   document.querySelector('table').appendChild(cap);
 
   let spaces = today.getDay();
@@ -67,15 +70,25 @@ function createCalendar(yy, mm) {
     let td = document.createElement('td');
     td.innerHTML = i;
     tr.appendChild(td);
-    if ((i + spaces) % 7 == 0) {
-      document.querySelector('tbody').appendChild(tr);
-      td.style.backgroundColor='blue';
-      td.style.color='white';
-      tr = document.createElement('tr');
-    }else if((i + spaces) % 7 == 1 ){
-      td.style.backgroundColor='red';
-      td.style.color='white';
+    for (let ho = 0; ho < hollyday.length; ho++) {
+      if (i == hollyday[ho]) {
+        td.style.backgroundColor = 'red';
+        td.style.color = 'white';
+      }
     }
+    if ((i + spaces) % 7 == 0) {
+      // td.setAttribute('class', 'saturday');
+      td.style.backgroundColor = "blue";
+      td.style.color = "white";
+
+      document.querySelector('tbody').appendChild(tr);
+      tr = document.createElement('tr');
+    } else if ((i + spaces) % 7 == 1) {
+      // td.setAttribute('class', 'sunday'); 클래스에 테이블 속성을 적용하면 안됨
+      td.style.backgroundColor = "red";
+      td.style.color = "white";
+    }
+
 
 
   }
