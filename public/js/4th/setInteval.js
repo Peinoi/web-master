@@ -15,6 +15,7 @@ strAry.forEach(function (item, idx, ary) {
 
 let timing = 3;
 let cnt = document.querySelectorAll('div.inner').length;
+
 //이벤트(찾기 버튼 클릭하면 alert('클릭'))
 document.querySelector('#search_Word')
   .addEventListener('click', function () {
@@ -46,7 +47,10 @@ setInterval(function () {
   //console.log(timing--);
   if (timing == 0 && cnt > 0) {
     alert('실패');
+    
+  }else if(timing==0){
+    document.querySelector('label').innerHTML = timing;
+    
   }
-  document.querySelector('label').innerHTML = timing;
   timing--;
 }, 1000); //지정 시간 마다 무한 반복
