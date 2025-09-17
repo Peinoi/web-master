@@ -67,3 +67,13 @@ xhtp.onload = function () {
   console.log("포이치 전 " + data);
 };
 
+
+const person ={
+ name : 'Hong',
+ birth: '1999-09-09',
+ phone: '010-9999-9999' 
+}
+person.name;
+person['birth'];
+const prop ='phone';
+person[prop];
