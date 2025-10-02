@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+  /* 기본 글꼴 설정 */
+  font-family: Arial, sans-serif; 
+}
+
+body {
+  /* 배경색을 밝은 회색 계열로 변경 */
+  background-color: #f4f7f6; 
+  margin: 0;
+  padding: 0;
+}
+
+/* 전체 컨테이너에 Flexbox 적용 */
+#container {
+  display: flex;
+  max-width: 1200px; /* 최대 너비 설정으로 중앙에 배치 */
+  margin: 0 auto;
+  min-height: 100vh; /* 화면 전체 높이 사용 */
+  background-color: #ffffff; /* 컨테이너 내부 배경은 흰색 */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* 깔끔한 그림자 효과 */
+}
+
+header {
+  /* header는 #container 밖에 있다고 가정하고 스타일 유지 (전체 너비 사용) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50; 
+  color: white;
+  padding: 15px 30px;
+  width: 100%;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* 섹션(게시판 영역) 스타일 */
+section {
+  width: 80%; 
+  padding: 100px 20px 20px 20px; /* 헤더 공간 확보 */
+  background-color: #ffffff; 
+  
+  /* 섹션 내부 게시판 배치를 위해 Flexbox 적용 */
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px; /* 게시판 간격 */
+  align-content: flex-start; 
+}
+
+/* 사이드바(프로필 영역) 스타일 */
+aside {
+  width: 20%; 
+  padding: 100px 20px 20px 20px; /* 헤더 공간 확보 */
+  background-color: #ecf0f1; 
+}
+
+/* 게시판 제목 (H2) - 왼쪽 정렬 및 스타일 개선 */
+article h2 {
+  text-align: left; 
+  margin: 0 0 10px 0;
+  padding-left: 5px;
+  font-size: 1.2em;
+  color: #34495e; 
+  border-left: 4px solid #3498db; 
+}
+
+/* 이름/사번/부서명 (H3) - 세로 나열 및 스타일 개선 */
+aside h3 {
+  display: block; 
+  float: none; 
+  text-align: center;
+  margin: 15px 0; 
+  font-size: 1em;
+  color: #34495e;
+  font-weight: normal;
+}
+
+
+/* ------------------------------------------------ */
+/* 게시판 및 캘린더 레이아웃 */
+/* ------------------------------------------------ */
+
+/* 전체게시판 (왼쪽에 크게 배치) */
+#main_board {
+  width: 45%; 
+  min-height: 500px; 
+  padding: 0; 
+}
+
+#main_board div.board {
+  width: 100%;
+  height: 440px; 
+  background-color: #fcfcfc;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 캘린더 (오른쪽 상단) */
+article:nth-child(2) { /* 두 번째 article (캘린더) 선택 */
+    width: 50%;
+    min-height: 230px;
+    padding: 0;
+}
+
+article:nth-child(2) table.table {
+    width: 100%;
+    height: 420px;
+    border-collapse: collapse;
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* border-radius 적용을 위해 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* 테이블 내부 스타일 */
+    font-size: 0.9em;
+}
+
+article:nth-child(2) table.table th, 
+article:nth-child(2) table.table td {
+    border: 1px solid #eee;
+    padding: 5px;
+    text-align: center;
+}
+
+article:nth-child(2) table.table thead {
+    background-color: #ecf0f1;
+    color: #34495e;
+}
+
+/* 내 게시판 (캘린더 아래에 배치) */
+#my_board {
+  width: 100%; /* section 너비의 30% (내부 영역의 약 1/3) */
+  min-height: 230px; 
+  padding: 0; 
+}
+
+/* 발신함 & 수신함 (내 게시판 옆에 나란히 배치) */
+#send_board, #get_board {
+  width: 100%; 
+  min-height: 230px; 
+  padding: 0;
+}
+
+#my_board div.board, #send_board div.board, #get_board div.board {
+  width: 100%;
+  height: 180px; 
+  background-color: #fcfcfc;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+/* ------------------------------------------------ */
+/* 메시지 작성 버튼 스타일 */
+/* ------------------------------------------------ */
+
+/* 모든 .board div 내의 span 태그에 Flexbox 적용 */
+.board {
+    display: flex; /* 내부 아이템을 가로로 배치 */
+    flex-direction: column; /* 기본적으로 세로 배치 (메시지 목록 등) */
+    align-items: flex-start; /* 아이템을 시작점(왼쪽)에 정렬 */
+    padding: 10px; /* 내부 여백 추가 */
+    /* 기존 스타일 유지 */
+    width: 100%;
+    height: 180px; /* 또는 적절한 높이 */
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 메시지 작성 버튼을 감싼 span */
+.board span {
+    width: 100%; /* 부모 .board의 전체 너비 사용 */
+    display: flex; /* 내부 버튼을 정렬하기 위해 Flexbox 다시 적용 */
+    justify-content: flex-end; /* 버튼을 오른쪽 끝으로 배치 */
+    margin-bottom: 10px; /* 버튼과 hr 사이 간격 */
+}
+
+/* 버튼 스타일 제거 */
+button {
+    background: none; /* 배경색 없음 */
+    border: none; /* 테두리 없음 */
+    padding: 5px 10px; /* 내부 여백 조절 */
+    color: #3498db; /* 글자색을 파란색 계열로 변경 */
+    font-size: 0.9em;
+    cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+    transition: color 0.2s ease-in-out; /* 부드러운 호버 효과 */
+}
+
+.board button:hover {
+    color: #2980b9; /* 호버 시 색상 진하게 */
+}
+
+/* hr 태그 스타일 */
+.board hr {
+    width: 100%; /* 가로선 전체 너비 */
+    border: none;
+    border-top: 1px solid #eee; /* 얇은 회색 선 */
+    margin: 0; /* 기본 마진 제거 */
+}
+
+/* ------------------------------------------------ */
+/* 기존 게시판 및 캘린더 레이아웃 스타일은 유지 */
+/* ------------------------------------------------ */
+
+/* 전체게시판 (왼쪽에 크게 배치) */
+#main_board {
+  width: 45%; 
+  min-height: 500px; 
+  padding: 0; 
+}
+
+#main_board div.board {
+    height: 440px; /* 높이 조정 */
+    /* 여기서는 flex-direction을 column으로 유지하여 기존과 동일하게 내용이 세로로 쌓이도록 함 */
+    /* 버튼이 있는 경우 span에만 justify-content: flex-end; 적용 */
+}
+
+
+
+/* ------------------------------------------------ */
+/* 프로필 영역 */
+/* ------------------------------------------------ */
+
+#picture{
+  width: 100px;
+  height: 100px;
+  background-color: #bdc3c7;
+  border-radius: 50%; 
+  margin: 0 auto 20px; 
+  overflow: hidden;
+  border: 3px solid #3498db; 
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  object-fit: cover; 
+  opacity: 0.8; 
+}
+img:hover{
+  opacity: 50%;
+}
+
+button{
+  cursor: pointer;
+  
+}

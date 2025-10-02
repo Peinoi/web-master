@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background-color: skyblue;
+  overflow: hidden;
+
+}
+
+#container {
+  text-align: center;
+  position: relative;
+
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#login_form {
+  margin-top: 200px;
+  width: 400px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+}
+
+#adduser_form {
+  margin-top: 200px;
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.hidden {
+  /*!important 우선순위 상승*/
+  display: none !important;
+}
+
+/*ydsoftware 글자 표시하는 거*/
+#title {
+  width: 50%;
+  line-height: 250px;
+  float: left;
+  color: blue;
+}
+
+/* 로그인 박스 */
+#login_box {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  line-height: 100%;
+  float: right;
+}
+
+/* 회원가입  박스 */
+#useradd_box {
+  width: 400px;
+  border-radius: 10px;
+  background-color: white;
+
+}
+
+/* 모든 input타입 */
+input {
+  width: 90%;
+  height: 50px;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: none;
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+#hiredate {
+  padding: 10px;
+}
+
+select {
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  margin: 5px 0 0 0;
+  padding: 0px 0px 0px 10px;
+  background-color: skyblue;
+  border: none;
+  font-weight: bold;
+}
+
+/* 버튼 */
+.btn {
+  width: 150px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  /*마우스 커서 손모양 */
+}
+
+.btn:hover {
+  opacity: 50%;
+}

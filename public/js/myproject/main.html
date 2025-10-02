@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>YDSoftWares</title>
+  <link href="css/main.css" rel="stylesheet">
 </head>
+
 <body>
-  
+  <div id="container">
+    <header>
+      <h1>YD Softwares</h1>
+      <h1 id="date">현재 시간 날짜 분 초</h1>
+    </header>
+    <section>
+      <article id="main_board">
+        <h2>전체게시판</h2>
+        <div class="board">
+          <span><button>게시글 작성</button></span>
+
+          <hr>
+        </div>
+      </article>
+      <article>
+        <h2>캘린더</h2>
+        <table border="2" class="table">
+          <thead>
+            <tr>
+              <th>일</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+              <th>토</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </article>
+      <article id="my_board">
+        <h2>내 게시판</h2>
+        <div class="board">
+
+          <span><button>게시글 작성</button></span>
+          <hr>
+        </div>
+      </article>
+      <article id="send_board">
+        <h2>발신함</h2>
+        <div class="board">
+          <span><button>메세지 작성</button></span>
+          <hr>
+        </div>
+      </article>
+      <article id="get_board">
+        <h2>수신함</h2>
+        <div class="board">
+
+      </article>
+
+    </section>
+    <aside>
+      <div id="picture">
+        <img src="img/plus.png">
+      </div>
+      <h3>이름</h3>
+      <h3>사번</h3>
+      <h3>부서명</h3>
+      <button>로그 아웃</button>
+    </aside>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/calendar.js"></script>
 </body>
+
 </html>
