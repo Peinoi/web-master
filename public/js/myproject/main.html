@@ -1,81 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YDSoftWares</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YDSoftWares</title>
-  <link href="css/main.css" rel="stylesheet">
-</head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>YD Softwares</h1>
+        <h1 id="date">현재 시간 날짜 분 초</h1>
+      </header>
 
-<body>
-  <div id="container">
-    <header>
-      <h1>YD Softwares</h1>
-      <h1 id="date">현재 시간 날짜 분 초</h1>
-    </header>
-    <section>
-      <article id="main_board">
-        <h2>전체게시판</h2>
-        <div class="board">
-          <span><button>게시글 작성</button></span>
+      <section>
+        <!-- 전체게시판 -->
+        <article id="main_board">
+          <h2>전체게시판</h2>
+          <div class="board">
+            <span><button>게시글 작성</button></span>
+            <hr />
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="post_id">Post ID</th>
+                  <th class="title">제목</th>
+                  <th class="write_date">작성일</th>
+                </tr>
+              </thead>
+              <tbody id="main_body"></tbody>
+            </table>
 
-          <hr>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center" id="main_paging"></ul>
+            </nav>
+          </div>
+        </article>
+
+        <!-- 캘린더 -->
+        <article>
+          <h2>캘린더</h2>
+          <table border="2" id="calendar" class="table">
+            <thead>
+              <tr>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </article>
+
+        <!-- 내 게시판 -->
+        <article id="my_board">
+          <h2>내 게시판</h2>
+          <div class="board">
+            <span><button>게시글 작성</button></span>
+            <hr />
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="post_id">Post ID</th>
+                  <th class="title">제목</th>
+                  <th class="write_date">작성일</th>
+                </tr>
+              </thead>
+              <tbody id="my_body"></tbody>
+            </table>
+          </div>
+          <ul class="pagination justify-content-center" id="my_paging"></ul>
+        </article>
+
+        <!-- 발신함 -->
+        <article id="send_board">
+          <h2>발신함</h2>
+          <div class="board">
+            <span><button>메세지 작성</button></span>
+            <hr />
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="title">제목</th>
+                  <th class="write_date">발신일</th>
+                </tr>
+              </thead>
+              <tbody id="send_msg_body"></tbody>
+            </table>
+          </div>
+          <ul class="pagination justify-content-center" id="send_paging"></ul>
+        </article>
+
+        <!-- 수신함 -->
+        <article id="get_board">
+          <h2>수신함</h2>
+          <div class="board">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="title">제목</th>
+                  <th class="write_date">수신일</th>
+                </tr>
+              </thead>
+              <tbody id="msg_body"></tbody>
+            </table>
+          </div>
+          <ul class="pagination justify-content-center" id="get_paging"></ul>
+        </article>
+      </section>
+
+      <aside>
+        <div id="picture">
+          <img src="img/plus.png" />
         </div>
-      </article>
-      <article>
-        <h2>캘린더</h2>
-        <table border="2" class="table">
-          <thead>
-            <tr>
-              <th>일</th>
-              <th>월</th>
-              <th>화</th>
-              <th>수</th>
-              <th>목</th>
-              <th>금</th>
-              <th>토</th>
-            </tr>
-          </thead>
-          <tbody>
+        <h3 id="name">이름</h3>
+        <h3 id="no">사번</h3>
+        <h3 id="dept">부서명</h3>
+        <button>로그 아웃</button>
+      </aside>
 
-          </tbody>
-        </table>
-      </article>
-      <article id="my_board">
-        <h2>내 게시판</h2>
-        <div class="board">
-
-          <span><button>게시글 작성</button></span>
-          <hr>
+      <!-- ✅ 팝업 배경 (블러 처리 영역) -->
+      <div id="popup_bg" class="popup-bg hidden">
+        <!-- ✅ 팝업 본체 -->
+        <div class="popup">
+          <h2 id="popup_title">제목 표시</h2>
+          <p id="popup_content">내용 표시</p>
+          <button id="popup_close">닫기</button>
         </div>
-      </article>
-      <article id="send_board">
-        <h2>발신함</h2>
-        <div class="board">
-          <span><button>메세지 작성</button></span>
-          <hr>
-        </div>
-      </article>
-      <article id="get_board">
-        <h2>수신함</h2>
-        <div class="board">
-
-      </article>
-
-    </section>
-    <aside>
-      <div id="picture">
-        <img src="img/plus.png">
       </div>
-      <h3>이름</h3>
-      <h3>사번</h3>
-      <h3>부서명</h3>
-      <button>로그 아웃</button>
-    </aside>
-  </div>
-  <script src="js/main.js"></script>
-  <script src="js/calendar.js"></script>
-</body>
+    </div>
 
+    <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/popup.js"></script>
+  </body>
 </html>

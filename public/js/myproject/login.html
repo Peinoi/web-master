@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YDSoftWares Login</title>
+    <link href="css/login.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YDSoftWares Login</title>
-  <link href="css/login.css" rel="stylesheet">
-</head>
+  <body>
+    <div id="container">
+      <div id="title">
+        <h1>YDSoftWares</h1>
+      </div>
+      <form action="#" method="post" id="login_form">
+        <div id="login_box">
+          <h2>로그인</h2>
+          <ul>
+            <li>
+              <input type="text" id="user_id" placeholder="  아이디를 입력 해주세요" />
+            </li>
+            <li>
+              <input type="password" id="user_pw" placeholder="  비밀번호를 입력 해주세요" />
+            </li>
+            <li>
+              <input type="submit" id="login" class="btn" value="로그인" />
+              <input type="submit" id="adduser" class="btn" value="회원가입" />
+            </li>
+          </ul>
+        </div>
+      </form>
 
-<body>
-  <div id="container">
-    <div id="title">
-      <h1>YDSoftWares</h1>
+      <form action="#" method="post" id="adduser_form">
+        <div id="useradd_box">
+          <h2>회원가입</h2>
+          <ul>
+            <li>
+              <input type="text" id="add_user_id" placeholder="  아이디를 입력 해주세요" />
+            </li>
+            <li>
+              <input type="password" id="add_user_pw" placeholder="  비밀번호를 입력 해주세요" />
+            </li>
+            <li>
+              <input type="text" id="user_name" placeholder="  이름을 입력 해주세요" />
+            </li>
+            <li>
+              <select id="deptno">
+                <option value="none" selected>부서 번호</option>
+                <option value="1">인사부</option>
+                <option value="2">개발부</option>
+                <option value="3">영업부</option>
+              </select>
+            </li>
+            <li>
+              <input type="date" id="hiredate" />
+            </li>
+            <li>
+              <input type="submit" id="add_btn" class="btn" value="등록" />
+              <input type="button" id="back_btn" class="btn" value="되돌아 가기" />
+            </li>
+          </ul>
+        </div>
+      </form>
     </div>
-    <form action="#" method="post" id="login_form">
-      <div id="login_box">
-        <h2>로그인</h2>
-        <ul>
-          <li>
-            <input type="text" id="user_id" placeholder="  아이디를 입력 해주세요">
-          </li>
-          <li>
-            <input type="password" id="user_pw" placeholder="  비밀번호를 입력 해주세요">
-          </li>
-          <li>
-            <input type="submit" id="login" class="btn" value="로그인">
-            <input type="submit" id="adduser" class="btn" value="회원가입">
-          </li>
-        </ul>
-      </div>
-    </form>
-
-    <form action="#" method="post" id="adduser_form">
-      <div id="useradd_box">
-        <h2>회원가입</h2>
-        <ul>
-          <li>
-            <input type="text" id="add_user_id" placeholder="  아이디를 입력 해주세요">
-          </li>
-          <li>
-            <input type="password" id="add_user_pw" placeholder="  비밀번호를 입력 해주세요">
-          </li>
-          <li>
-            <input type="text" id="user_name" placeholder="  이름을 입력 해주세요">
-          </li>
-          <li>
-            <select id="deptno">
-              <option value="none" selected>부서 번호</option>
-              <option value="1">인사부</option>
-              <option value="2">개발부</option>
-              <option value="3">영업부</option>
-            </select>
-          </li>
-          <li>
-            <input type="date" id="hiredate">
-          </li>
-          <li>
-            <input type="submit" class="btn" value="등록">
-            <input type="button" id="back_btn" class="btn" value="되돌아 가기">
-          </li>
-        </ul>
-      </div>
-    </form>
-  </div>
-  <script src="js/login.js"></script>
-</body>
-
+    <script src="js/login.js"></script>
+  </body>
 </html>

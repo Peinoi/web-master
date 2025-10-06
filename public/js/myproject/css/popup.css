@@ -1,0 +1,58 @@
+/* ✅ 팝업 전체 배경 (블러 + 클릭 차단) */
+.popup-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* ✅ 팝업창 본체 */
+.popup {
+  background: white;
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: popupIn 0.2s ease-in-out;
+}
+
+/* ✅ 애니메이션 효과 */
+@keyframes popupIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ✅ 닫기 버튼 */
+.popup button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #2563eb;
+}
+
+/* ✅ 숨김용 클래스 */
+.hidden {
+  display: none;
+}
